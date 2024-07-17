@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import initialState from './initState';
+import initialState from './initialState';
 import galleryReducer from './galerryRedux';
 
 const subreducers = {
