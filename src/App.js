@@ -1,10 +1,12 @@
 import { Container } from "react-bootstrap";
+import Home from "./components/page/Home/Home";
 
 
 const App = () => {
   return (
     <Container>
-      <h1>Olszynka</h1>
+      
+      <Home />
     </Container>
   );
 }
