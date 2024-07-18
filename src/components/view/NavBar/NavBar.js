@@ -2,6 +2,8 @@ import styles from "./NavBar.module.scss"
 import Button from '../../common/Button//Button';
 import { useState } from "react";
 import clsx from "clsx";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
 
@@ -25,7 +27,7 @@ const NavBar = () => {
             </div>
             <div className={styles.menuWrapper}>
                 <Button action={menuHandler}> 
-                    <i className="fa fa-bars"></i>    
+                    <FontAwesomeIcon icon={faBars} />
                 </Button>
                 <div className={clsx(styles.menu, { [styles.show]: visible} ) }>
                     <ul>

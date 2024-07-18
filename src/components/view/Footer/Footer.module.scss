@@ -1,0 +1,39 @@
+@import '../../../styles/settings.scss';
+
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .copyright{
+        color: $color-grey;
+    }
+
+    .social{
+        ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            margin: 0 5px;
+        }
+        a {
+            text-decoration: none;
+            color: $color-text;
+            padding: 5px;
+            &:hover{
+                font-size: 24px;
+                &.fb{
+                    color: $color-blue;
+                }
+                &.insta{
+                    color:$color-red;
+                }
+                transition: $transition;
+            }
+        }
+    }
+}
