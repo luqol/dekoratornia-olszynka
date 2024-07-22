@@ -1,19 +1,19 @@
 @import '../../../styles/settings.scss';
 
 .wrapper{
-    margin-top: 20px;
+    margin-top: 40px;
     .title{
-        font-size: 36px;
+        font-size: 3*$base-size;
         margin-bottom: 30px;
 
         @media (max-width: 770px) {
-            font-size: 24px;
+            font-size: 2*$base-size;
             margin-top: 30px;
             text-align: center;
         }
     }
 
-    .row{
+    .gallery{
         display: flex;
         justify-content: space-evenly;
         gap: 20px;
@@ -53,5 +53,49 @@
                 }
             }
         }
+    }
+
+    .desriptionWrapper{
+        display: flex;
+        gap: 150px;
+        justify-content: space-evenly;
+        margin-top: 70px;
+        align-items: center;
+
+        @media (max-width: 1200px) {
+            gap:70px
+        }
+        .description{
+            flex: 60%;
+            .desTitle{
+                font-size: 3*$base-size;
+            }
+            .desBody{
+                font-size: 1.5*$base-size;
+                font-family: $font-text-body;
+                line-height: 33px;
+                @media (max-width: 1200px) {
+                    font-size: 1.2*$base-size;
+                    line-height: 25px;
+                }
+            }
+
+            a{
+                color: $color-text;
+                display: block;
+                text-align: center;   
+            }
+        }
+        .imgWrapper{
+            flex: 40%;
+            @media ( max-width: 770px){
+                display: none;
+            }
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+
     }
 }
