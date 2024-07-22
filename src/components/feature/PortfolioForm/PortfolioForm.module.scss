@@ -1,0 +1,44 @@
+@import '../../../styles/settings.scss';
+
+.wrapper{
+    .menu{
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+
+            .activeSelect{
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 5px; 
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 60%;
+                    height: 2px; 
+                    background-color: $color-text;
+                }
+            }
+        }
+    }
+
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+
+        @media (max-width: 1200px){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 770px){
+            grid-template-columns: repeat(1, 1fr);
+            justify-content: center;
+            align-items: center;
+        }
+        
+    }
+}

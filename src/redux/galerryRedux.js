@@ -2,7 +2,7 @@
 
 // selectors
 
-export const getAllGallery = state => state.products;
+export const getAllGallery = state => state.gallery;
 
 //actions
 

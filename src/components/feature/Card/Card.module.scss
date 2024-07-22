@@ -1,0 +1,65 @@
+@import '../../../styles/settings.scss';
+
+.wrapper{
+    .card{
+        position: relative;
+        overflow: hidden;
+        .imgWrapper{
+            width: 100%;
+            height: auto;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .showInfo{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            bottom: 0;
+            background-color: $color-light;
+            width: 100%;
+            transform: translateY(100%);
+            transition: transform 0.5s ease-in-out;
+
+            .title{
+                margin-top: 2*$base-size;
+                margin-left: 2*$base-size;
+            }
+            .description{
+                margin-left: 2*$base-size;
+                font-family: $font-text-body;
+            }
+            .buttonWrapper{
+                display: flex;
+                justify-content: center;
+                margin-bottom: $base-size;
+                .btn{
+                    position: relative;
+                    width: 80px;
+                    background-color: $color-light;
+                    &:hover {
+                        background: darken($color-background, 10%);
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 5px; 
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 60%;
+                        height: 2px; 
+                        background-color: $color-text;
+                    }
+                }
+            }
+
+        }
+        
+        &:hover{
+            .showInfo{
+                transform: translateY(0);
+            }   
+        }
+    }
+}
