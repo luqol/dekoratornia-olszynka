@@ -40,5 +40,21 @@
             align-items: center;
         }
         
+        &.showMore{
+            grid-template-columns: repeat(3, 1fr);
+        }
+
     }
+
+    .btnWrapper{
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+        .btn{
+            border: solid 1px $color-text;
+            padding: 10px 20px;
+        }
+
+    }
+
 }

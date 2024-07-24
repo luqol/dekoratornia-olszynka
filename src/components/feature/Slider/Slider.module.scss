@@ -1,0 +1,46 @@
+@import '../../../styles/settings.scss';
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.imageContainer {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.imageContainer img {
+    flex-shrink: 0;
+    width: auto; 
+    height: 100px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.prevButton, .nextButton {
+    background-color: transparent;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    &:hover{
+        background: transparent;
+    }
+}
+
+.prevButton {
+    left: -30px; 
+}
+
+.nextButton {
+    right: -30px; 
+}
