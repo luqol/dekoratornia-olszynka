@@ -1,6 +1,5 @@
 @import '../../../styles/settings.scss';
 
-
 .footer{
     display: flex;
     align-items: center;
@@ -34,7 +33,9 @@
                 &.insta{
                     color:$color-red;
                 }
-                transition: $transition;
+                & {
+                    transition: $transition;
+                }
             }
         }
     }
