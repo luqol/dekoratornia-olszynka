@@ -1,0 +1,35 @@
+@import '../../../styles/settings.scss';
+
+.header{
+    position: relative;
+    overflow: hidden;
+    max-height: 500px;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $color-light;
+        opacity: 0.5; 
+        z-index: 1;
+    }
+
+    .title{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5*$base-size;
+        z-index: 2;
+    }
+}

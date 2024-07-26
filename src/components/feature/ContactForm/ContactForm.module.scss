@@ -1,0 +1,58 @@
+@import '../../../styles/settings.scss';
+
+.wrapper{
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+
+    .title{
+        font-family: $font-text-body;
+    }
+
+    label{
+        display: block;
+        margin: 16px 0;
+    }
+
+    input{
+        border: none;
+        background-color: inherit;
+        width: 100%;
+        border-bottom: 1px solid $color-grey;
+        margin-bottom: 5px;
+        font-family: $font-text-body;
+        padding-bottom: 10px;
+    }
+    
+    .personalData{
+        display: flex;
+        gap: 20px;
+        text-align: start;
+
+        .dataWrapper{
+           flex: 1;
+        }
+    }
+
+    .msg{
+        text-align: start;
+        textarea{
+            border: none;
+            background-color: inherit;
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid $color-grey;
+            margin-bottom: 5px;
+            font-family: $font-text-body;
+            padding-bottom: 10px;
+        }
+    }
+
+    .btnWrapper{
+        margin-top: 20px;;
+        .btn{
+            border: solid 1px $color-text;
+            padding: 10px 40px;
+        }
+    }
+}
