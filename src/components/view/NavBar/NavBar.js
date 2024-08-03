@@ -26,7 +26,7 @@ const NavBar = () => {
                 </div>
             </div>
             <div className={styles.menuWrapper}>
-                <Button action={menuHandler}> 
+                <Button className={styles.btn} action={menuHandler}> 
                     <FontAwesomeIcon icon={faBars} />
                 </Button>
                 <div className={clsx(styles.menu, { [styles.show]: visible} ) }>
