@@ -1,8 +1,8 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Button from '../../common/Button/Button';
 import styles from './ContactForm.module.scss';
 import emailjs from '@emailjs/browser';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 const ContactForm = () => {
 
@@ -11,19 +11,29 @@ const ContactForm = () => {
     const [msg, setMsg] = useState('');
     const [status, setStatus] = useState('hide'); // hide, success, fail
     const [honeypot, setHoneypot] = useState('');
-    const [captchaValue, setCaptchaValue] = useState('');
+    const [captchaToken, setCaptchaToken] = useState('');
 
-    const recaptchaRef = useRef();
+    const { executeRecaptcha } = useGoogleReCaptcha();
 
-    const handleCaptcha = (value) => {
-        setCaptchaValue(value);
-        console.log("Captcha value:", value);
+    const handleRecaptcha = async () => {
+        if (!executeRecaptcha) {
+            console.error('reCAPTCHA not loaded');
+            return;
+        }
+
+        try {
+            const token = await executeRecaptcha('contact_form_submit');
+            setCaptchaToken(token);
+            console.log("Captcha token:", token);
+        } catch (error) {
+            console.error('Error executing reCAPTCHA:', error);
+        }
     };
 
     const formHandler = async (e) => {
         e.preventDefault();
 
-        if(!name || !email || !msg || !!captchaValue){
+        if(!name || !email || !msg || !captchaToken){
             console.log('brak danych');
             return;
         }
@@ -59,7 +69,7 @@ const ContactForm = () => {
     };
 
     return(
-        <div className={styles.wrapper} onSubmit={formHandler}>
+        <div className={styles.wrapper} onSubmit={(e) => { handleRecaptcha(); formHandler(e); }}>
             <p className={styles.title}>Wypełnij formularz</p>
             { status === 'success' && 
                 <div className={styles.success}>
@@ -116,13 +126,6 @@ const ContactForm = () => {
                         required
                         minLength={10}
                         value={msg} onChange={e => setMsg(e.target.value)}
-                    />
-                </div>
-                <div className={styles.captcha}>
-                    <ReCAPTCHA
-                        sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} 
-                        onChange={handleCaptcha}
-                        ref={recaptchaRef}
                     />
                 </div>
                 <div className={styles.btnWrapper}>
