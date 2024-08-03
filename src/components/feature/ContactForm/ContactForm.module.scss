@@ -55,4 +55,28 @@
             padding: 10px 40px;
         }
     }
+    .success{
+        display: flex;
+        justify-content: center;
+        p{
+            color: $color-green;
+            background-color: darken($color-background, 10%);
+            padding: 10px;
+            border-radius: $radius;
+        }
+    }
+    .fail{
+        display: flex;
+        justify-content: center;
+        p{
+            color: $color-red;
+            background-color: darken($color-background, 10%);
+            padding: 10px;
+            border-radius: $radius;
+        }
+    }
+
+    .honeypot{
+        display: none;
+    }
 }
