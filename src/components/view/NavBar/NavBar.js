@@ -15,26 +15,43 @@ const NavBar = () => {
         setVisible(!visible);
     };
 
-    const linkHandle = () => {
+    const scrollToSection = (e) => {
+        e.preventDefault();
+        const targetId = e.currentTarget.getAttribute('data-target');
+        if (targetId === '#home') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
         setVisible(false);
     };
+
+    const imgHandler = () => {
+        window.location.reload();
+    };
+
     return(
         <div className={styles.wrapper}>
             <div className={styles.logo}>
-                <div className={styles.imgWrapper}>
+                <div className={styles.imgWrapper} onClick={imgHandler}>
                     <img alt="Dekoratornia Olszynka" src="/images/logo.png" />
                 </div>
             </div>
             <div className={styles.menuWrapper}>
-                <Button className={styles.btn} action={menuHandler}> 
-                    <FontAwesomeIcon icon={faBars} />
-                </Button>
+                <div className={styles.btnHandler}>
+                    <Button className={styles.btn} action={menuHandler}> 
+                        <FontAwesomeIcon icon={faBars} />
+                    </Button>
+                </div>
                 <div className={clsx(styles.menu, { [styles.show]: visible} ) }>
                     <ul>
-                        <li><a href="#home" onClick={linkHandle}>Home</a></li>
-                        <li><a href="#about" onClick={linkHandle}>About</a></li>
-                        <li><a href="#portfolio" onClick={linkHandle}>Portfolio</a></li>
-                        <li><a href="#contact" onClick={linkHandle}>Contact</a></li>
+                        <li><a href="/" data-target="#home" onClick={scrollToSection}>Home</a></li>
+                        <li><a href="/" data-target="#about" onClick={scrollToSection}>About</a></li>
+                        <li><a href="/" data-target="#portfolio" onClick={scrollToSection}>Portfolio</a></li>
+                        <li><a href="/" data-target="#contact" onClick={scrollToSection}>Contact</a></li>
                     </ul>
                 </div>
             </div>

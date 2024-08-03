@@ -18,28 +18,43 @@ const ContactForm = () => {
     const handleRecaptcha = async () => {
         if (!executeRecaptcha) {
             console.error('reCAPTCHA not loaded');
-            return;
+            return false;
         }
 
         try {
             const token = await executeRecaptcha('contact_form_submit');
-            setCaptchaToken(token);
-            console.log("Captcha token:", token);
+            if (token) {
+                setCaptchaToken(token);
+                console.log("Captcha token:", token);
+                return true;
+            } else {
+                console.error('Empty token received');
+                return false;
+            }
         } catch (error) {
             console.error('Error executing reCAPTCHA:', error);
+            return false;
         }
     };
 
     const formHandler = async (e) => {
         e.preventDefault();
 
+        const recaptchaSuccess = await handleRecaptcha();
+        if (!recaptchaSuccess || !captchaToken) {
+            setStatus('fail');
+            return;
+        }
+
         if(!name || !email || !msg || !captchaToken){
             console.log('brak danych');
+            setStatus('fail');
             return;
         }
 
         if (honeypot) {
             console.log('Bot detected');
+            setStatus('fail');
             return; 
         }
         
@@ -69,7 +84,7 @@ const ContactForm = () => {
     };
 
     return(
-        <div className={styles.wrapper} onSubmit={(e) => { handleRecaptcha(); formHandler(e); }}>
+        <div className={styles.wrapper} >
             <p className={styles.title}>Wypełnij formularz</p>
             { status === 'success' && 
                 <div className={styles.success}>
@@ -81,7 +96,7 @@ const ContactForm = () => {
                     <p> Ups.. Coś poszło nie tak... </p>
                 </div>
             }
-            <form className={styles.form}>
+            <form className={styles.form} onSubmit={(e) =>  formHandler(e) }>
                 <input 
                     type="text" 
                     name="honeypot" 
