@@ -11,7 +11,7 @@ const ContactForm = () => {
     const [msg, setMsg] = useState('');
     const [status, setStatus] = useState('hide'); // hide, success, fail
     const [honeypot, setHoneypot] = useState('');
-    const [captchaToken, setCaptchaToken] = useState('');
+    //const [captchaToken, setCaptchaToken] = useState('');
 
     const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -24,11 +24,11 @@ const ContactForm = () => {
         try {
             const token = await executeRecaptcha('contact_form_submit');
             if (token) {
-                setCaptchaToken(token);
-                console.log("Captcha token:", token);
+                //setCaptchaToken(token);
+                //console.log("Captcha token:", token);
                 return true;
             } else {
-                console.error('Empty token received');
+                //console.error('Empty token received');
                 return false;
             }
         } catch (error) {
@@ -41,12 +41,15 @@ const ContactForm = () => {
         e.preventDefault();
 
         const recaptchaSuccess = await handleRecaptcha();
-        if (!recaptchaSuccess || !captchaToken) {
+
+        if (!recaptchaSuccess) {
             setStatus('fail');
+            //console.log('captha');
+            
             return;
         }
 
-        if(!name || !email || !msg || !captchaToken){
+        if(!name || !email || !msg ){
             console.log('brak danych');
             setStatus('fail');
             return;
@@ -82,6 +85,7 @@ const ContactForm = () => {
             setStatus('fail');
         }
     };
+
 
     return(
         <div className={styles.wrapper} >
