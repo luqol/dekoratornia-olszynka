@@ -51,12 +51,24 @@
 
 
     .btnWrapper{
-        margin-top: 20px;;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
         .btn{
-            border: solid 1px $color-text;
+            color: $color-light;
             padding: 10px 40px;
+            display: block;
+            text-align: center;   
+            text-decoration: none;
+            background-color: $color-text;
+            border: 1px solid $color-text;
+            &:hover{
+                background-color: $color-background;
+                color: $color-text;
+            }
         }
     }
+
     .success{
         display: flex;
         justify-content: center;
