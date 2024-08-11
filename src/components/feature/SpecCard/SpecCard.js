@@ -5,6 +5,7 @@ import { getGalleryById } from '../../../redux/galerryRedux';
 import Button from '../../common/Button/Button';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
 import Slider from '../Slider/Slider';
 import { useState } from 'react';
@@ -17,8 +18,24 @@ const SpecCard = ({id, status, action}) => {
 
     const btnHandler = (e) =>{
         e.preventDefault();
-        console.log(e.target.alt);
+        //console.log(e.target.alt);
         setMainImg(`/images/portfolio/${e.target.alt}`)
+    };
+
+    const handlePrev = (e) => {
+        const index = data.images.findIndex(obj => obj.img === mainImg.split('/').pop()); 
+        if(index > 0){
+            setMainImg(`/images/portfolio/${data.images[index-1].img}`);
+        }
+        
+    };
+
+    const handleNext = (e) =>{
+        const index = data.images.findIndex(obj => obj.img === mainImg.split('/').pop()); 
+        if(index < (data.images.length-1)){
+            setMainImg(`/images/portfolio/${data.images[index+1].img}`);
+        }
+        
     };
 
     if (!data) {
@@ -38,7 +55,20 @@ const SpecCard = ({id, status, action}) => {
                 <div className={styles.specCard}>
                     <div className={styles.imagesSection}>
                         <div className={styles.mainImg}>
+                            <Button 
+                                action={handlePrev} 
+                                className={styles.prevButton}
+                            >
+                                <FontAwesomeIcon icon={faChevronLeft} />
+                            </Button>
                             <img alt='main img' src={mainImg}></img>
+                            <Button 
+                                action={handleNext} 
+                                className={styles.nextButton}
+                                
+                            >
+                                <FontAwesomeIcon icon={faChevronRight} />
+                            </Button> 
                         </div>
                         <div className={styles.slider}>
                             <Slider images={data.images} action={btnHandler}/>

@@ -48,10 +48,10 @@ const NavBar = () => {
                 </div>
                 <div className={clsx(styles.menu, { [styles.show]: visible} ) }>
                     <ul>
-                        <li><a href="/" data-target="#home" onClick={scrollToSection}>Home</a></li>
-                        <li><a href="/" data-target="#about" onClick={scrollToSection}>About</a></li>
+                        <li><a href="/" data-target="#home" onClick={scrollToSection}>Strona główna</a></li>
+                        <li><a href="/" data-target="#about" onClick={scrollToSection}>O mnie</a></li>
                         <li><a href="/" data-target="#portfolio" onClick={scrollToSection}>Portfolio</a></li>
-                        <li><a href="/" data-target="#contact" onClick={scrollToSection}>Contact</a></li>
+                        <li><a href="/" data-target="#contact" onClick={scrollToSection}>Kontakt</a></li>
                     </ul>
                 </div>
             </div>
