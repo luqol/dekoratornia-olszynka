@@ -18,7 +18,7 @@
         width: auto;
         margin-bottom: 10px;
 
-        @media (max-width: 780px) {
+        @media (max-width: 1000px) {
             height: 50px;
         }
         
@@ -61,11 +61,15 @@
                 text-decoration: none;
                 color: $color-text;
                 font-size: 2*$base-size;
+                transition: $transition;
+                &:hover{
+                    color: $color-grey;
+                }
             }
         }
 
 
-        @media (max-width: 780px){
+        @media (max-width: 1000px){
             .btnHandler{
                 z-index: 13;
                 display: block;
@@ -103,12 +107,12 @@
                     width: 200px;
                     li {
                         padding: $base-size;
-    
                     }
                     a{
                         text-decoration: none;
                         color: $color-text;
                         font-size: 2*$base-size;
+
                     }
                 }
             }

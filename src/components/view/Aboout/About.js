@@ -1,6 +1,14 @@
+import Button from '../../common/Button/Button';
 import styles from './About.module.scss';
 
 const About = () => {
+    const scrollToSection = (e) => {
+        e.preventDefault();
+        const targetId = e.currentTarget.getAttribute('data-target');
+        const targetElement = document.querySelector(targetId);
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+
+    };
     return(
        <div className={styles.wrapper} id='about'>
             <h2 className={styles.title}>Czym się zajmuję?</h2>
@@ -35,7 +43,9 @@ const About = () => {
                     <p className={styles.desBody}>
                     Dołącz do naszej rodziny klientów, którzy już od lat czerpią radość z naszych unikalnych usług. Dekoratornia Olszynka - twoje marzenia o pięknie wnętrz stają się rzeczywistością.
                     </p>
-                    <a href='#contact'>Skontaktuj sie!</a>
+                    <div className={styles.btnWrapper}>
+                        <Button href="/" data="#contact" action={scrollToSection}>Skontaktuj sie!</Button>
+                    </div>
                 </div>
                 <div className={styles.imgWrapper}>
                     <img alt='Szyszki' src='/images/szyszki.png' />

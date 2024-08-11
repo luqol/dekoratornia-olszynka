@@ -80,11 +80,23 @@
                 }
             }
 
-            a{
-                color: $color-text;
-                display: block;
-                text-align: center;   
+            .btnWrapper{
+                display: flex;
+                justify-content: center;
+                button{
+                    color: $color-light;
+                    display: block;
+                    text-align: center;   
+                    text-decoration: none;
+                    background-color: $color-text;
+                    border: 1px solid $color-text;
+                    &:hover{
+                        background-color: $color-background;
+                        color: $color-text;
+                    }
+                }
             }
+
         }
         .imgWrapper{
             flex: 40%;
