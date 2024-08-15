@@ -25,6 +25,7 @@
 
         .box{
             position: relative;
+            text-align: center;
 
             @media (max-width: 770px) {
                 height: auto;
@@ -46,12 +47,13 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 transition: $transition;
+                font-size: 24px;
             }
-            &:hover{
+            /* &:hover{
                 .subtitle{
-                    font-size: 16px;
+                    font-size: 24px;
                 }
-            }
+            }  */
         }
     }
 

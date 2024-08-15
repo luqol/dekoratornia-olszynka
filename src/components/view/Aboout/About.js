@@ -25,6 +25,7 @@ const About = () => {
                 <div className={styles.box}>
                     <img alt='Ręczne dekoracje' src='/images/about3.png' />
                     <p className={styles.subtitle}>Ręczne wykonywanie dekoracji</p>
+                    
                 </div>
             </div>
 
