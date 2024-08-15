@@ -49,11 +49,13 @@
                 transition: $transition;
                 font-size: 24px;
             }
-            /* &:hover{
-                .subtitle{
-                    font-size: 24px;
+            @media (min-width: 780px) {
+                &:hover{
+                    .subtitle{
+                        transform: translate(-50%, -50%) scale(1.2);
+                    }
                 }
-            }  */
+            } 
         }
     }
 
