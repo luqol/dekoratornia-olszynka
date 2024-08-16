@@ -42,7 +42,7 @@ const NavBar = () => {
             </div>
             <div className={styles.menuWrapper}>
                 <div className={styles.btnHandler}>
-                    <Button className={styles.btn} action={menuHandler}> 
+                    <Button id='hamburger' aria-label='mobile hamburger' className={styles.btn} action={menuHandler}> 
                         <FontAwesomeIcon icon={faBars} />
                     </Button>
                 </div>

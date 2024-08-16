@@ -1,4 +1,5 @@
 @import './settings.scss';
+@import "./typography.scss";
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -20,6 +21,7 @@ body {
   margin: 0 auto;
   position: relative;
 }
+
 .grecaptcha-badge{
   visibility:hidden
 }

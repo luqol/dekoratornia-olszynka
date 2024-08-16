@@ -4,7 +4,7 @@ const Header = () => {
     return(
         <div className={styles.wrapper}>
             <div className={styles.imgWrapper}>
-                <img alt='logoHeader' src='/images/headerLogo.png' />
+                <img alt='logoHeader' src='/images/headerLogo.webp' />
             </div>
             <div className={styles.titleWrapper}>
                 <h1 className={styles.title}>Dekoratornia</h1>

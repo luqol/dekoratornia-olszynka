@@ -14,10 +14,10 @@ const Footer = () => {
             </div>
             <div className={styles.social}>
                 <ul>
-                    <li><a className={styles.fb} href='https://www.facebook.com/profile.php?id=61557608729241'>
+                    <li><a id='socFb' aria-label='Lint to facebook' className={styles.fb} href='https://www.facebook.com/profile.php?id=61557608729241'>
                         <FontAwesomeIcon icon={faFacebookF} />
                     </a></li>
-                    <li><a className={styles.insta} href='https://www.instagram.com/dekoratorniaolszynka/'>
+                    <li><a  id='socInsta' aria-label='lint to instagram' className={styles.insta} href='https://www.instagram.com/dekoratorniaolszynka/'>
                         <FontAwesomeIcon icon={faInstagram} />
                     </a></li>
                 </ul>

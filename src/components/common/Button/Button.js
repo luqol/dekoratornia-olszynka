@@ -2,9 +2,9 @@ import clsx from 'clsx';
 import styles from './Button.module.scss'
 import PropTypes from 'prop-types';
 
-const Button = ({children, action, className, disabled, data}) => {
+const Button = ({children, action, className, disabled, data, id}) => {
     return (
-        <button type='submit' className={clsx(styles.button, className)}  data-target={data} onClick={action} disabled={disabled}>{children}</button>
+        <button type='submit'  id={id} className={clsx(styles.button, className)}  data-target={data} onClick={action} disabled={disabled}>{children}</button>
     );
 };
 

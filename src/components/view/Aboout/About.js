@@ -15,15 +15,15 @@ const About = () => {
 
             <div className={styles.gallery}>
                 <div className={styles.box}>
-                    <img alt='Renowacje figur' src='/images/about1.png' />
+                    <img alt='Renowacje figur' src='/images/about1.webp' />
                     <p className={styles.subtitle}>Renowacja figur</p>
                 </div>
                 <div className={styles.box}>
-                    <img alt='Kopie obrazow' src='/images/about2.png' />
+                    <img alt='Kopie obrazow' src='/images/about2.webp' />
                     <p className={styles.subtitle}>Kopie obrazów</p>
                 </div>
                 <div className={styles.box}>
-                    <img alt='Ręczne dekoracje' src='/images/about3.png' />
+                    <img alt='Ręczne dekoracje' src='/images/about3.webp' />
                     <p className={styles.subtitle}>Ręczne wykonywanie dekoracji</p>
                     
                 </div>
@@ -49,7 +49,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className={styles.imgWrapper}>
-                    <img alt='Szyszki' src='/images/szyszki.png' />
+                    <img alt='Szyszki' src='/images/szyszki.webp' />
                 </div>
             </div>
        </div>

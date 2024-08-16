@@ -5,7 +5,7 @@ const Contact = () => {
     return(
         <div className={styles.wrapper} id='contact'>
             <div className={styles.header}>
-                <img alt='contactHeader' src={`/images/contact.png`} />
+                <img alt='contactHeader' src={`/images/contact.webp`} />
                 <div className={styles.title}>
                     <h2>Napisz do mnie</h2>
                 </div>
